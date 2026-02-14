@@ -1,0 +1,57 @@
+import { subtle } from "crypto";
+import { title } from "process";
+
+export const images = [
+ { src: "https://images.prod.favotrip.nl/images/1762860149061-7pojtv2b.jpg", 
+   title:"City trip Delft with Tasting of Craft\nBeer and Snacks" ,
+   icon1:"https://www.favotrip.nl/assets/images/bed-icon.svg",
+   icon2:"https://www.favotrip.nl/assets/images/ticket-icon.svg"},
+ { src:"https://images.prod.favotrip.nl/images/1762779913775-2qk42irs.jpg",
+   title:"Cologne city trip with access to\nAqualand" ,
+   icon1:"https://www.favotrip.nl/assets/images/bed-icon.svg",
+   icon2:"https://www.favotrip.nl/assets/images/ticket-icon.svg"},
+ { src:"https://images.prod.favotrip.nl/images/1769524871472-2n80eloh.jpg",
+   title:"Disneyland® Paris – 1 day access to\nDisneyland® Park & Walt Disney\nStudios® with Hotel" ,
+   icon1:"https://www.favotrip.nl/assets/images/bed-icon.svg",
+   icon2:"https://www.favotrip.nl/assets/images/ticket-icon.svg"},
+ { src:"https://images.prod.favotrip.nl/images/1769524614261-92ryxdoi.jpg",
+   title:"Disneyland® Paris – 2 days access to\nboth parks & 2 nights in hotel of your\nchoice" ,
+   icon1:"https://www.favotrip.nl/assets/images/bed-icon.svg",
+   icon2:"https://www.favotrip.nl/assets/images/ticket-icon.svg"},
+ { src:"https://images.prod.favotrip.nl/images/1761811321444-wpmadnlx.jpg", 
+    title:"Maastricht with Access to\nHoensbroek Castle" ,
+    icon1:"https://www.favotrip.nl/assets/images/bed-icon.svg",
+    icon2:"https://www.favotrip.nl/assets/images/ticket-icon.svg"},
+ { src:"https://images.prod.favotrip.nl/images/1761667713165-qprkuue4.jpg", 
+    title:"Ultimate Relaxation in Valkenburgs\nThermae 2000" ,
+    icon1:"https://www.favotrip.nl/assets/images/bed-icon.svg",
+    icon2:"https://www.favotrip.nl/assets/images/ticket-icon.svg"},
+ { src:"https://images.prod.favotrip.nl/images/1761647255007-74qkb0ep.jpg", 
+    title:"Oberhausen with access to\nLEGOLAND® and SEA LIFE incl. Hotel" ,
+    icon1:"https://www.favotrip.nl/assets/images/bed-icon.svg",
+    icon2:"https://www.favotrip.nl/assets/images/ticket-icon.svg"},
+ { src:"https://images.prod.favotrip.nl/images/1761467833198-am2vqhbj.jpg", 
+    title:"Rotterdam with audiovisual show!" ,
+    icon1:"https://www.favotrip.nl/assets/images/bed-icon.svg",
+    icon2:"https://www.favotrip.nl/assets/images/ticket-icon.svg"},
+ { src:"https://images.prod.favotrip.nl/images/1761379942481-g7i87szc.jpg", 
+    title:"Hamburg with evening cruise" ,
+    icon1:"https://www.favotrip.nl/assets/images/bed-icon.svg",
+    icon2:"https://www.favotrip.nl/assets/images/ticket-icon.svg"},
+ { src:"https://images.prod.favotrip.nl/images/1761311336588-88vip0ke.jpg", 
+    title:"Boulogne-sur-Mer inclusive Nausicaá\nuarium Ticket", 
+    icon1:"https://www.favotrip.nl/assets/images/bed-icon.svg",
+    icon2:"https://www.favotrip.nl/assets/images/ticket-icon.svg"},
+ { src:"https://images.prod.favotrip.nl/images/1760624803732-g8yk8vnq.jpg", 
+    title:"City trip Bruges with Frietmuseum\nTickets" ,
+    icon1:"https://www.favotrip.nl/assets/images/bed-icon.svg",
+    icon2:"https://www.favotrip.nl/assets/images/ticket-icon.svg"},
+ { src:"https://images.prod.favotrip.nl/images/1757502082971-a5t4z3y3.jpg", 
+    title:"City trip Utrecht with Kasteel de Haar\nTickets" ,
+    icon1:"https://www.favotrip.nl/assets/images/bed-icon.svg",
+    icon2:"https://www.favotrip.nl/assets/images/ticket-icon.svg"}
+ ] as const;
+
+
+
+export type ImageValues =(typeof images)[number];
