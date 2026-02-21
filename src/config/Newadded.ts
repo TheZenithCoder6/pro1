@@ -1,4 +1,4 @@
-export const images = [
+export const imagesn = [
  { src: "https://images.prod.favotrip.nl/images/1762860149061-7pojtv2b.jpg", 
    title:"City trip Delft with Tasting of Craft\nBeer and Snacks" ,
    icon1:"https://www.favotrip.nl/assets/images/bed-icon.svg",
@@ -51,4 +51,4 @@ export const images = [
 
 
 
-export type ImageValue =(typeof images)[number];
+export type ImageValuen =(typeof imagesn)[number];

@@ -1,15 +1,9 @@
 "use client"
-import { useEffect } from "react";
 import Wicon from "@/components/Cards/Wicon";
 
 
 export default function Faq(){
-    useEffect(() =>{
-        document.body.style.overflowX = "hidden";
-        return()=>{
-            document.body.style.overflowX = "auto";
-        };
-    },[]);
+
     return(
         <>
         <div className=" mt-30 ml-24 w-full h-[1150px]">
