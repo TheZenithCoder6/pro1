@@ -110,7 +110,7 @@ export default function Img_card1(){
     };
 
 return (
-    <div className="w-full mt-[35vh] md:mt-[15vh] py-12 bg- overflow-hidden bg-[#fdfaf2]">
+    <div className="w-full mt-[35vh] md:mt-[15vh] py-12 bg- overflow-hidden bg-[#fdfaf2] md:h-[2150px] h-[1900px]">
         {/* New in Presentation */}
         <div className="max-w-7xl mx-auto md:px-4 relative cursor-pointer">
             <h2 className="text-2xl md:text-3xl py-4 ml-4 text-[20px]">New in Presentation</h2>
