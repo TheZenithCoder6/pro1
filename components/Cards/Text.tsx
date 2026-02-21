@@ -4,7 +4,7 @@ import Link from "next/link"
 export default function Text(){
     return(
         <div className=" w-full  h-full px-4 md:px-16  ">
-            <div className="flex flex-col md:flex-row w-full gap-8 md:gap-12">
+            <div className="flex flex-col md:flex-row w-full gap-8 mt-4 md:gap-12">
             <div className="w-full flex flex-col md:flex-row justify-start gap-4">
             <div><h2 className="font-semibold text-2xl md:text-3xl">Discover your travel happiness during your next holiday</h2>
             <p className="mt-4 text-gray-700">Favotrip is all about special trips that suit you. Every day we put together a surprising selection from hotels, activities and transport to complete, ready-made packages. From a spontaneous weekend trip close to home to a short holiday to unknown pearls in Europe, everything is smartly put together and easy to book</p><br/>
