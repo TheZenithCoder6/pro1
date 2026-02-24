@@ -110,7 +110,8 @@ export default function Img_card1(){
     };
 
 return (
-    <div className="w-full md:h-[1970px] h-[1730px]  mt-[250px] md:mt-[8vh]  lg::mt-[15vh] py-8 overflow-hidden bg-[#fdfaf2]">
+    <div className="w-full md:h-[1970px] h-[1730px]  mt-[250px] md:mt-[8vh]  lg::mt-[15vh] py-8 overflow-hidden bg-[#fdfaf2] ">
+
         {/* New in Presentation */}
         <div className="max-w-7xl mx-auto md:px-2 relative cursor-pointer">
             <h2 className="text-xl md:text-2xl py-4 ml-4 text-[20px] mt-2 mb-2">Nu in the presentation</h2>
@@ -423,7 +424,8 @@ return (
          scrollbar-width: none;
          }`}</style>
               
-</div>   
+</div> 
+
 )
 }
 
