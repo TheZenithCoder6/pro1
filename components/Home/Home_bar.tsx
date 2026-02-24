@@ -85,7 +85,7 @@ function getFirstDay(year:number , month:number){
 }
 
     return(
-        <div className="absolute w-full flex justify-center top-[450px] md:top-[520px]">
+        <div className="absolute w-full flex justify-center top-[450px] md:top-[520px] mt-1 sm:mt-24 md:mt-0">
             <div className="w-full mx-6 md:mx-12 max-w-[1330] bg-white rounded-md border border-gray-300 shadow-xl">
                <div className="grid grid-cols-1 md:grid-cols-4 md:items-center px-4 py-4 gap-6 md:gap-0">
 
