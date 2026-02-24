@@ -19,7 +19,7 @@ export default function Navbar(){
                    />
                 </Link>
                 {/* DESKTOP MENU */}
-               <ul className="hidden md:flex items-center gap-4 text-gray-700 text-md font-medium mr-[400px]">
+               <ul className="hidden md:flex items-center gap-4 text-gray-700 text-md font-medium">
                  <li className="hover:text-black cursor-pointer">Reiscategories</li>
                  <li className="hover:text-black cursor-pointer">Travel destination</li>
                  <li className="hover:text-black cursor-pointer">Topics</li>
