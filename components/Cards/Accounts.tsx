@@ -13,7 +13,7 @@ export default function Newsletter(){
             <div onClick={()=> setOpen(false)}
             className="fixed  inset-0 flex items-center justify-right bg-transparent z-50 p-4 m-8">
                 <div onClick={(e)=> e.stopPropagation()}
-                    className="bg-white relative w-full sm:w-[400px] sm:h-[70vh] max-w-xs   md:max-h-[90vh] overflow-y-auto ml-auto shadow-xl">
+                    className="bg-white relative w-full h-auto max-w-xs pb-4  md:max-h-[90vh] overflow-y-auto ml-auto shadow-xl">
 
                       <button onClick={()=> setOpen(false)}
                              className="absolute top-2 right-2 text-gray-600 hover:text-black ">

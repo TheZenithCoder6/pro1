@@ -64,8 +64,8 @@ export default function Footer(){
                          </button>
                     </div>
             {/* icon2  facebook insta*/}
-                <div className="flex flex-col md:flex-col-reverse sm:flex-row sm:justify-between items-center gap-4 border-t md:border-t-0 pt-6 md:pt-2 md:text-left md:w-1/2 md:justify-start text-gray-A1A1A1">
-                    <div className="flex items-center md:items-center gap-3 md:mt-2">
+                <div className="flex flex-col md:ml-32 md:flex-col-reverse sm:flex-row sm:justify-between md:items-start items-center gap-4 border-t md:border-t-0 pt-6 md:pt-2 md:text-left md:w-1/2 md:justify-start text-gray-A1A1A1">
+                    <div className="flex items-center md:items-start gap-4 md:gap-6  md:mt-2 ">
                          <img
                             src="https://www.favotrip.nl/assets/images/Facebook.png"
                             alt="Facebook"
@@ -77,20 +77,20 @@ export default function Footer(){
                             className="w-9 h-9 mt-2"
                             />
                     </div>
-                     <div className="flex items-center gap-4 ">
-                        <p className="text-5xl font-smbold">Favotrip </p><span>©2025</span>
+                     <div className="flex items-center gap-2  ">
+                        <p className="text-4xl font-smbold">Favotrip </p><span>©2025</span>
                      </div>
                   </div>
             
               {/* link */}
-             <div className="grid grid-cols-2 md:flex md:flex-row md:gap-12  gap-6 py-6 mb-8 text-center md:justify-end">
+             <div className="grid grid-cols-2 md:flex md:flex-row md:gap-12 mr-16 gap-6 py-6 mb-8 text-center md:justify-end">
                  <div className="flex flex-col gap-2">
                     <Link href="/faq" className="cursor-pointer md:mb-5" >Frequently asked questions</Link>
                     <Link href="/privacy-policy" className="cursor-pointer md:ml-16" >Privacy & cookies</Link> 
                  </div>
                  <div className="flex flex-col">
                     <Link href="/algemene-voorwaarden" className="cursor-pointer md:mb-5">General terms and conditions</Link> 
-                    <Link href="/contact" className="cursor-pointer md:ml-40"> Contact</Link>     
+                    <Link href="/contact" className="cursor-pointer md:ml-42 mt-8 md:mt-2"> Contact</Link>     
                 </div>       
           </div>
 

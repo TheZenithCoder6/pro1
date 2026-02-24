@@ -1,8 +1,10 @@
 "use client"
 import { RefObject } from "react";
 import { useState ,useRef,useEffect } from "react";
-import { HiOutlineArrowCircleLeft } from "react-icons/hi";
-import { HiOutlineArrowCircleRight } from "react-icons/hi";
+import { SlArrowLeft } from "react-icons/sl";
+import { SlArrowRight } from "react-icons/sl";
+
+
 
 
 export default function Home_bar(){
@@ -22,6 +24,8 @@ const [openArrival, setOpenArrival] = useState(false)
 const [currentMonth, setCurrentMonth] = useState(new Date().getMonth())
 const [currentYear, setCurrentYear] = useState(new Date().getFullYear())
 const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+const [minNight, setMinNight] = useState<number>(1);
+const [maxNight, setMaxNight] = useState<number>(1);
 
 
 const dropdownRef = useRef<HTMLDivElement>(null)
@@ -81,12 +85,12 @@ function getFirstDay(year:number , month:number){
 }
 
     return(
-        <div className="absolute w-full flex justify-center top-[470px] md:top-[450px]">
-            <div className="w-full mx-6 md:mx-12 max-w-7xl bg-white rounded-md border border-gray-300 shadow-xl">
-               <div className="flex flex-col md:flex-row justify-between md:items-center px-6 md:px-10 py-6 gap-6 md:gap-0">
+        <div className="absolute w-full flex justify-center top-[450px] md:top-[520px]">
+            <div className="w-full mx-6 md:mx-12 max-w-[1330] bg-white rounded-md border border-gray-300 shadow-xl">
+               <div className="grid grid-cols-1 md:grid-cols-4 md:items-center px-4 py-4 gap-6 md:gap-0">
 
                   {/* ARRIVAL KI LOGIC */}
-                    <div ref={arrivalRef} className="relative border-b md:border-b-0 md:border-r border-gray-300 pb-4 md:pb-0 md:px-8">
+                    <div ref={arrivalRef} className="relative w-full  flex-1 border-b md:border-b-0 md:border-r border-gray-300 pb-4 md:pb-0 md:px-8">
                     <div
                         onClick={() => {
                           setOpenArrival(prev => !prev); 
@@ -110,7 +114,7 @@ function getFirstDay(year:number , month:number){
                         
 
                          {openArrival && (
-                            <div className={`absolute left-0 mt-4 w-full md:w-96 bg-white rounded-xl shadow-xl p-6 z-50 ${
+                            <div className={`absolute left-[-5px] mt-4 w-full md:w-80 bg-white rounded-xl shadow-xl p-4 z-50 ${
                                 arrivalUpward ? "bottom-full mb-4" : "mt-4"
                             }`}>
                                 <div className="flex justify-between items-center mb-4 md:w-full gap-2">
@@ -124,8 +128,8 @@ function getFirstDay(year:number , month:number){
                                         }
                                         
                                       }}
-                                      className="text-xl md:text-2xl flex-shrink-0">
-                                       <HiOutlineArrowCircleLeft/>
+                                      className=" flex-shrink-0 shadow-sm border border-black/10 rounded-full p-1">
+                                       <SlArrowLeft />
                                     </button>
 
                                     {/* month_year */}
@@ -167,8 +171,8 @@ function getFirstDay(year:number , month:number){
                                             setCurrentMonth(prev => prev + 1);
                                         }                                 
                                       }}
-                                      className="text-xl md:text-2xl flex-shrink-0">
-                                     <HiOutlineArrowCircleRight/>
+                                       className=" flex-shrink-0 shadow-sm border border-black/10 rounded-full p-1">
+                                      <SlArrowRight />
                                     </button>
                             </div>
 
@@ -210,7 +214,7 @@ function getFirstDay(year:number , month:number){
                          )}
                     </div>
                   {/* night logic */}
-                 <div ref={nightRef} className="relative mr-8 border-b md:border-b-0 md:border-r border-gray-300 pb-4 md:pb-0 md:px-8">
+                 <div ref={nightRef} className="relative w-full flex-1 mr-8 border-b md:border-b-0 md:border-r border-gray-300 pb-4 md:pb-0 md:px-8">
                         <div 
                          onClick={() => {
                           setOpenNights(prev => !prev); 
@@ -228,7 +232,7 @@ function getFirstDay(year:number , month:number){
                         className="cursor-pointer select-one">
                             <p className="text-gray-700 text-sm">Number of nights</p>
                             <p className="text-gray-900">
-                                {nights} nights
+                                {minNight} - {maxNight} nights
                             </p>
                         </div>
                         {openNights && (
@@ -237,29 +241,65 @@ function getFirstDay(year:number , month:number){
                             }`}>
                                     <h3 className="font-semibol mb-4">Number of nights</h3>
 
+
                                     {/* night ka logic */}
-                                     <div className="flex justify-between items-center mb-4">
-                                        <span>Nights</span>
-                                        <div className="flex items-center gap-4 bg-gray-100 px-4 py-2 rounded-lg">
-                                             <button
-                                              onClick={() => setNights((prev) => Math.max(1, prev - 1))}>
-                                                -
-                                             </button>
-                                             <span>{nights}</span>
-                                             <button 
-                                              onClick={() => setNights((prev) => prev + 1)}>
-                                                +
-                                             </button>
-                                        </div>
-                           
-                                     </div>
-                                     </div>
+                                    <div className="mt-6 relative w-full  h-10 flex flex-center overflow-hidden">
+                                        {/* line */}
+                                        <div className="absolute w-full h-1 bg-gray-300 rounded-md mt-2"></div>
+                                        {/* orange line */}
+                                         <div className="absolute w-auto h-1 bg-orange-500 rounded-md mt-2"
+                                         style={{
+                                            left:`${(minNight / 14 )* 100}%`,
+                                            right: `${100- (maxNight / 14 )* 100}%`,
+                                         }}></div>
+
+                                                                      {/* MIN */}
+                                                                    <input
+                                                                      type="range"
+                                                                     min={1}
+                                                                      max={14}
+                                                                      value={minNight}
+                                                                      onChange={(e) =>
+                                                                        setMinNight(
+                                                                          Math.min(Number(e.target.value), maxNight - 1)
+                                                                        )
+                                                                      }
+                                                                      className="absolute w-full z-10 appearance-none bg-transparent
+                                                                      [&::-webkit-slider-thumb]:appearance-none
+                                                                      [&::-webkit-slider-thumb]:h-5
+                                                                      [&::-webkit-slider-thumb]:w-5
+                                                                      [&::-webkit-slider-thumb]:rounded-full
+                                                                      [&::-webkit-slider-thumb]:bg-orange-500"
+                                                                    />
+                                                                  
+                                                                    {/* MAX */}
+                                                                    <input
+                                                                      type="range"
+                                                                      min={1}
+                                                                      max={14}
+                                                                      value={maxNight}
+                                                                      onChange={(e) =>
+                                                                        setMaxNight(
+                                                                          Math.max(Number(e.target.value), minNight + 1)
+                                                                        )
+                                                                      }
+                                                                      className="absolute w-full z-20 appearance-none bg-transparent
+                                                                      [&::-webkit-slider-thumb]:appearance-none
+                                                                      [&::-webkit-slider-thumb]:h-5
+                                                                      [&::-webkit-slider-thumb]:w-5
+                                                                      [&::-webkit-slider-thumb]:rounded-full
+                                                                      [&::-webkit-slider-thumb]:bg-orange-500"
+                                                                                                                                      />
+
+                                    </div>
+                                     <p className="text-center font-semibold mt-6"> {minNight} - {maxNight} nights</p>
+                                    </div>
                         )}
 
                  </div>
               
 
-                 <div ref={dropdownRef} className="relative border-b md:border-b-0 md:border-r border-gray-300 pb-4 md:pb-0 md:px-2">
+                 <div ref={dropdownRef} className="relative  w-full flex-1 border-b md:border-b-0 md:border-r border-gray-300 pb-4 md:pb-0 md:px-2">
                   {/* click box */}
                         <div 
                             onClick={() => {
@@ -330,8 +370,8 @@ function getFirstDay(year:number , month:number){
                  </div>
                                 
                  <div>
-                   <div className="flex justify-center  md:justify-start">
-                       <button className="bg-blue-500  w-full md:w-auto text-white px-12  cursor-pointer rounded-md py-4">
+                   <div className="flex justify-center w-full flex-1 md:justify-start">
+                       <button className="bg-blue-500  w-full md:w-auto text-white px-4  cursor-pointer rounded-md py-4 ml-2 md:ml-48">
                          Show travel
                         </button>
                    </div>

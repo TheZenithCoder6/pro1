@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "MyFont";
+  src: url("/fonts/UcCo3FwrK3iLTcviYwYZ8UA3.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #f5efef;
@@ -8,5 +15,18 @@
 
 html,body{
   overflow-x: hidden;
+  /* height: 100%; */
+  
 }
+/* 
+#smooth-wrapper{
+   overflow-x: hidden;
+  height: 100%;
+}
+#smooth-content{
+  min-height: 100vh;
+} */
 
+body {
+  font-family: myfont;
+}

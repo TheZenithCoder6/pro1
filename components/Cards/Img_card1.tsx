@@ -6,8 +6,8 @@ import { images ,ImageValue } from "@/src/config/imageConfig";
 import { imagesv ,ImageValuev } from "@/src/config/vouchersConfig";
 import { imagesn } from "@/src/config/Newadded";
 import { imagest } from "@/src/config/topics";
-import { HiOutlineArrowCircleLeft } from "react-icons/hi";
-import { HiOutlineArrowCircleRight } from "react-icons/hi";
+import { SlArrowLeft } from "react-icons/sl";
+import { SlArrowRight } from "react-icons/sl";
 
 export default function Img_card1(){
     const scrollRef1 = useRef<HTMLDivElement>(null);
@@ -110,44 +110,44 @@ export default function Img_card1(){
     };
 
 return (
-    <div className="w-full mt-[35vh] md:mt-[15vh] py-12 bg- overflow-hidden bg-[#fdfaf2]">
+    <div className="w-full md:h-[1970px] h-[1730px]  mt-[250px] md:mt-[8vh]  lg::mt-[15vh] py-8 overflow-hidden bg-[#fdfaf2]">
         {/* New in Presentation */}
-        <div className="max-w-7xl mx-auto md:px-4 relative cursor-pointer">
-            <h2 className="text-2xl md:text-3xl py-4 ml-4 text-[20px]">New in Presentation</h2>
+        <div className="max-w-7xl mx-auto md:px-2 relative cursor-pointer">
+            <h2 className="text-xl md:text-2xl py-4 ml-4 text-[20px] mt-2 mb-2">Nu in the presentation</h2>
 
             <div className="relative">
                 {/* //L-button */}
                 <button
                 onClick={scrollLeft}
-                className="absolute hidden sm:flex items-center justify-center left-0 top-1/4 -translate-y-1/2 z-10 bg-white shadow-md p-1 rounded-full"
+                className="absolute hidden sm:flex items-center justify-center left-0 top-1/4 -translate-y-1/2 z-10 bg-white shadow-md p-3 rounded-full"
                 >
-                    <HiOutlineArrowCircleLeft size={28}/>
+                    <SlArrowLeft size={12}/> 
                 </button>
 
                 {/* right side button */}
                 <button
                 onClick={scrollRight}
-                className="absolute hidden sm:flex items-center justify-center right-0 top-1/4 -translate-y-1/2 z-10 bg-white shadow-md p-1 rounded-full"
+                className="absolute hidden sm:flex items-center justify-center right-0 top-1/4 -translate-y-1/2 z-10 bg-white shadow-md p-3 rounded-full"
                 >
-                    <HiOutlineArrowCircleRight size={28}/>
+                    <SlArrowRight size={12}/>
                 </button>
                   {/* auto scroll container */}
                   <div
                   ref={scrollRef1}
                   onMouseEnter={() => setIsHovered(true)}
                   onMouseLeave= {() => setIsHovered(false)}
-                  className="flex overflow-x-auto scroll-smooth no-scrollbar snap-x snap-mandatory"
+                  className="flex overflow-x-auto scroll-smooth no-scrollbar snap-x snap-mandatory "
                   >
                   {ImageArray.map((Values, i) => (
                     <div 
                     key={i}
-                    className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 md:w-1/3 px-4 snap-start">
+                    className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 md:w-1/2 px-4 snap-start bg-[#fdfaf2]">
 
                         {/* card */}
-                        <div className="bg-white rounded-sm shadow-lg overflow-hidden h-[420px] flex flex-col">
+                        <div className="bg-white rounded-sm border border-black/10  overflow-hidden h-[420px] flex flex-col ">
 
                             {/* image */}
-                            <div  className="relative w-full h-64">
+                            <div  className="relative w-full h-64 ">
                                 <Image 
                                 src={Values.src}
                                 alt={Values.title}
@@ -157,19 +157,19 @@ return (
                             </div>
 
                             {/* issu fixeing */}
-                            <div className=" flex flex-col mt-4 ml-4 flex-1 justify-between">
+                            <div className=" flex flex-col  flex-1 justify-between bg-[#fdfaf2]">
                                 <div>
-                                    <div className="mb-2  gap-2 flex items-center">
+                                    <div className="mb-2  gap-2 flex items-center ">
                                         <img 
                                         src={Values.icon1}
                                         alt=""
-                                         className="w-5 h-5"
+                                         className="w-5 h-5 mt-4 ml-4"
                                         />
                                         +
                                          <img 
                                         src={Values.icon2}
                                         alt=""
-                                        className="w-5 h-5"
+                                        className="w-5 h-5 mt-4 ml-4"
                                         />
                                     </div>
                                     <h3 className="font-bold text-lg mb-1 line-clamp-2">{Values.title}</h3>
@@ -187,7 +187,7 @@ return (
             </div>
         </div>
         {/* Vouchers */}
-<div className="w-full md:mt-[9vh] py-14 bg- overflow-hidden bg-white">
+<div className="w-full md:mt-[9vh]  overflow-hidden bg-white">
          <div className="max-w-7xl mt-8 mx-auto md:px-4 relative cursor-pointer">
             <h2 className="text-2xl md:text-3xl py-4 ml-4 text-[20px]">Vouchers</h2>
 
@@ -195,17 +195,17 @@ return (
                 {/* //L-button */}
                 <button
                 onClick={scrollLeft2}
-                className="absolute hidden sm:flex items-center justify-center left-0 top-1/4 -translate-y-1/2 z-10 bg-white shadow-md p-1 rounded-full"
+                className="absolute hidden sm:flex items-center justify-center left-0 top-1/4 -translate-y-1/2 z-10 bg-white shadow-md p-3 rounded-full"
                 >
-                    <HiOutlineArrowCircleLeft size={28}/>
+                    <SlArrowLeft size={12}/>
                 </button>
 
                 {/* right side button */}
                 <button
                 onClick={scrollRight2}
-                className="absolute hidden sm:flex items-center justify-center right-0 top-1/4 -translate-y-1/2 z-10 bg-white shadow-md p-1 rounded-full"
+                className="absolute hidden sm:flex items-center justify-center right-0 top-1/4 -translate-y-1/2 z-10 bg-white shadow-md p-3 rounded-full"
                 >
-                    <HiOutlineArrowCircleRight size={28}/>
+                    <SlArrowRight size={12}/>
                 </button>
                   {/* auto scroll container */}
                   <div
@@ -220,7 +220,7 @@ return (
                     className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/2 md:w-1/2 px-4 snap-start">
 
                         {/* card */}
-                        <div className="bg-white rounded-sm shadow-lg overflow-hidden h-[420px] flex flex-col">
+                        <div className="bg-white rounded-sm border border-black/10  overflow-hidden h-[420px] flex flex-col">
 
                             {/* image */}
                             <div  className="relative w-full h-64">
@@ -281,17 +281,17 @@ return (
             <div className="relative">
                 <button
                 onClick={scrollLeft3}
-                className="absolute hidden sm:flex items-center justify-center left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md p-1 rounded-full"
+                className="absolute hidden sm:flex items-center justify-center left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md p-3 rounded-full"
                 >
-                    <HiOutlineArrowCircleLeft size={28}/>
+                    <SlArrowLeft size={12}/>
                 </button>
 
                 {/* right side button */}
                 <button
                 onClick={scrollRight3}
-                className="absolute hidden sm:flex items-center justify-center right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md p-1 rounded-full"
+                className="absolute hidden sm:flex items-center justify-center right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md p-3 rounded-full"
                 >
-                    <HiOutlineArrowCircleRight size={28}/>
+                    <SlArrowRight size={12}/>
                 </button>
                   {/* auto scroll container */}
                   <div
@@ -313,7 +313,7 @@ return (
                     className="flex-shrink-0 w-1/2 lg:w-1/2 md:w-1/2 px-4 snap-start">
 
                         {/* card */}
-                        <div className="bg-white rounded-sm shadow-lg overflow-hidden h-16 md:h-56">
+                        <div className="bg-white rounded-sm border border-black/10  overflow-hidden h-16 md:h-56">
 
                             {/* image */}
                             <div  className="relative w-full h-16 md:h-56">
@@ -336,7 +336,7 @@ return (
         </div>
         </div>
          {/* New added */}
-<div className="w-full py-14 bg- overflow-hidden bg-white">
+<div className="w-full h-full overflow-hidden bg-white">
          <div className="max-w-7xl mt-8 mx-auto md:px-4 relative cursor-pointer">
             <h2 className="text-2xl md:text-3xl py-4 ml-4 text-[20px]">New added</h2>
 
@@ -344,17 +344,17 @@ return (
                 {/* //L-button */}
                 <button
                 onClick={scrollLeft4}
-                className="absolute hidden sm:flex items-center justify-center left-0 top-1/4 -translate-y-1/2 z-10 bg-white shadow-md p-1 rounded-full"
+                className="absolute hidden sm:flex items-center justify-center left-0 top-1/4 -translate-y-1/2 z-10 bg-white shadow-md p-3 rounded-full"
                 >
-                    <HiOutlineArrowCircleLeft size={28}/>
+                    <SlArrowLeft size={12}/>
                 </button>
 
                 {/* right side button */}
                 <button
                 onClick={scrollRight4}
-                className="absolute hidden sm:flex items-center justify-center right-0 top-1/4 -translate-y-1/2 z-10 bg-white shadow-md p-1 rounded-full"
+                className="absolute hidden sm:flex items-center justify-center right-0 top-1/4 -translate-y-1/2 z-10 bg-white shadow-md p-3  rounded-full"
                 >
-                    <HiOutlineArrowCircleRight size={28}/>
+                    <SlArrowRight size={12}/>
                 </button>
                   {/* auto scroll container */}
                   <div
@@ -369,7 +369,7 @@ return (
                     className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/2 md:w-1/2 px-4 snap-start">
 
                         {/* card */}
-                        <div className="bg-white rounded-sm shadow-lg overflow-hidden h-[420px] flex flex-col">
+                        <div className="bg-white rounded-sm  border border-black/10 overflow-hidden h-[420px] flex flex-col">
 
                             {/* image */}
                             <div  className="relative w-full h-64">
